@@ -12,16 +12,15 @@ The Server Application
 Designing The Application State Tree
 Project Setup
 Getting Comfortable With Immutable
-
 Writing The Application Logic With Pure Functions
   Loading Entries
   Starting The Vote
   Voting
   Moving to The Next Pair
   Ending The Vote
-
 Introducing Actions and Reducers
-
 A Taste of Reducer Composition
-
 Introducing The Redux Store
+Setting up a Socket.io Server
+Broadcasting State from a Redux Listener
+Receiving Remote Redux Actions
