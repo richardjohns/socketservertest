@@ -4,23 +4,23 @@ import {expect} from 'chai'
 import reducer from '../src/reducer'
 
 describe('reducer', () => {
-    it('handle SET_ENTRIES with an undefined state', () => {
+    it('can handle SET_ENTRIES with an undefined state', () => {
         const action = {type: 'SET_ENTRIES', entries: ['Trainspotting']}
         const nextState = reducer(undefined, action)
         expect(nextState).to.equal(fromJS({
             entries: ['Trainspotting']
         }))
     })
-    it('handle SET_ENTRIES', () => {
+    it('can handle SET_ENTRIES', () => {
         const initialState = Map()
         const action = {type: 'SET_ENTRIES', entries: ['Trainspotting']}
         const nextState = reducer(initialState, action)
-        
+
         expect(nextState).to.equal(fromJS({
             entries: ['Trainspotting']
         }))
     })
-    it('handle NEXT', () => {
+    it('can handle NEXT', () => {
         const initialState = fromJS({
             entries: ['Trainspotting', '28 Days Later']
         })
@@ -34,7 +34,7 @@ describe('reducer', () => {
             entries: []
         }))
     })
-    it('handle VOTE', () => {
+    it('can handle VOTE', () => {
         const initialState = fromJS({
             vote: {
                 pair: ['Trainspotting', '28 Days Later']
@@ -52,7 +52,7 @@ describe('reducer', () => {
             entries: []
         }))
     })
-    it('can be used with reduce', () => {
+    it('can handle a series of batched actions', () => {
         const actions = [
           {type: 'SET_ENTRIES', entries: ['Trainspotting', '28 Days Later']},
           {type: 'NEXT'},
@@ -62,7 +62,7 @@ describe('reducer', () => {
           {type: 'NEXT'}
         ];
         const finalState = actions.reduce(reducer, Map());
-      
+
         expect(finalState).to.equal(fromJS({
           winner: 'Trainspotting'
         }))
