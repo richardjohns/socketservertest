@@ -1,11 +1,7 @@
 import Server from 'socket.io'
-import makeStore from './store'
 
-export const store = makeStore()
-startServer(store)
-
-export default function startServer() {
-  const io = new Server().attach(5000)
+export default function startServer(store) {
+  const io = new Server().attach(8090)
 
   store.subscribe(
     () => io.emit('state', store.getState().toJS())
