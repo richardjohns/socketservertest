@@ -8,7 +8,7 @@ export default function makeStore() { return createStore(
   reducers,
   compose(
     applyMiddleware(thunkMiddleware)
-    window.devToolsExtension ? window.devToolsExtension() : f => f
+    // window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 )
 }
