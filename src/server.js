@@ -1,7 +1,5 @@
 import Server from 'socket.io'
 import {toJS} from 'immutable'
-// import store from './store'
-// const store = createStore(reducers);
 
 export default function startServer(store) {
   const io = new Server().attach(8090)
