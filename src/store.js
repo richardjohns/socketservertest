@@ -1,7 +1,7 @@
 import {createStore, applyMiddleware, compose} from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
-import reducers from '../client/reducers'
+import reducers from '../client/reducers/index'
 
 // export default function makeStore() { return createStore(
 //   reducers,
